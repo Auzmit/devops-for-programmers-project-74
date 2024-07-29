@@ -1,7 +1,6 @@
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile.production
-    image: auzmit/devops-for-programmers-project-74
+    build: .
     command: make test
+    volumes:
+      - ./app:/app
