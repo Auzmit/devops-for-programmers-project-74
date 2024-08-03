@@ -5,5 +5,3 @@ services:
       dockerfile: Dockerfile.production
     image: evageq/devops-for-programmers-project-74
     command: make test
-    volumes:
-      - ./app:/app
