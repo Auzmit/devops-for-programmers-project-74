@@ -8,3 +8,14 @@ services:
     command: make dev
     volumes:
       - ./app:/app
+    environment:
+      NODE_ENV: development
+  caddy:
+    image: caddy
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./services/caddy/Caddyfile:/etc/caddy/Caddyfile
