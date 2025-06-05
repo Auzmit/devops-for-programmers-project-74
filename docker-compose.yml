@@ -4,9 +4,15 @@ services:
       context: .
       dockerfile: Dockerfile.production
     depends_on:
-      - db
-    image: evageq/devops-for-programmers-project-74
+      db:
+        condition: service_healthy
+    image: auzmit/devops-for-programmers-project-74
     command: make test
+    environment:
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
   db:
     image: postgres:latest
     healthcheck:
@@ -15,8 +21,6 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      POSTGRES_HOST: db
-      POSTGRES_NAME: postgres
-      POSTGRES_USERNAME: postgres
-      POSTGRES_PASSWORD: password
-
+      - POSTGRES_USER=${DATABASE_USERNAME}Add commentMore actions
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
