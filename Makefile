@@ -7,13 +7,13 @@ test:
 dev:
 	npm start
 
-docker-test:
+ci:
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 docker-run:
 	docker-compose up
 
-docker-build-prod:Add commentMore actions
+docker-build-prod:
 	docker-compose -f docker-compose.yml build app
 
 docker-push:
