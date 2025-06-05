@@ -34,3 +34,4 @@ jobs:
           file: Dockerfile.production
           push: true
           tags: ${{ vars.APP_IMAGE_NAME }}:latest
+          
