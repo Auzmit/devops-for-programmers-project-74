@@ -6,7 +6,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    image: auzmit/devops-for-programmers-project-74
+    image: evageq/devops-for-programmers-project-74
     command: make test
     environment:
       - DATABASE_HOST=${DATABASE_HOST}
