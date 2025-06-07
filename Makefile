@@ -1,7 +1,7 @@
 export DATABASE_HOST=db
 export DATABASE_NAME=postgres
 export DATABASE_USERNAME=postgres
-export DATABASE_PASSWORD=password
+export DATABASE_PASSWORD=postgres
 
 setup:
 	docker-compose run --rm app make setup
