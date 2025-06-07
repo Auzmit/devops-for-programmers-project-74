@@ -21,6 +21,7 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      - POSTGRES_USER=${DATABASE_USERNAME}Add commentMore actions
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
-      - POSTGRES_DB=${DATABASE_NAME}
+      POSTGRES_HOST: db
+      POSTGRES_NAME: postgres
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: password
